@@ -32,4 +32,12 @@ public class Payment implements Serializable {
         this.l_id = l_id;
         this.vc_serial = vc_serial;
     }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "l_id=" + l_id +
+                ", vc_serial='" + vc_serial + '\'' +
+                '}';
+    }
 }

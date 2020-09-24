@@ -6,4 +6,8 @@
         select t.l_payid,t.vc_serial from tpayment t
     </select>
 
+    <select id="FindPaymentBylid" resultType="com.anzaiyun.entity.Payment">
+        select t.l_payid,t.vc_serial from tpayment t where t.l_payid = #{l_id}
+    </select>
+
 </mapper>

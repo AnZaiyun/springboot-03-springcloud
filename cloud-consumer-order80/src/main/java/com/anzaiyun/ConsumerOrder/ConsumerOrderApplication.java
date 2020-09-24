@@ -1,16 +1,14 @@
-package com.anzaiyun.ProviderPayment;
+package com.anzaiyun.ConsumerOrder;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-@MapperScan("com.anzaiyun.ProviderPayment.mapper")
-public class ProviderPayment8001Application {
+public class ConsumerOrderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProviderPayment8001Application.class,args);
+        SpringApplication.run(ConsumerOrderApplication.class,args);
     }
 }

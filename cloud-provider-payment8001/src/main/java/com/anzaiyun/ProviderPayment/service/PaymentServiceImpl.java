@@ -24,7 +24,7 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Payment FindPaymentBylid(Integer l_id) {
-        return null;
+        return paymentServiceMapper.FindPaymentBylid(l_id);
     }
 
     @Override
