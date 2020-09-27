@@ -11,11 +11,14 @@
 
   <modules>
     <module>cloud-api-commons</module>
-    <module>cloud-provider-payment8001</module>
-    <module>cloud-consumer-order80</module>
     <module>cloud-eureka-server7001</module>
     <module>cloud_eureka_server_7002</module>
+    <module>cloud-provider-payment8001</module>
     <module>cloud-provider-payment8002</module>
+    <module>cloud-provider-zk-payment8003</module>
+    <module>cloud-provider-consul-payment8004</module>
+    <module>cloud-consumer-order80</module>
+    <module>cloud-consumer-zk-order81</module>
   </modules>
 
   <!--统一管理jar包版本-->

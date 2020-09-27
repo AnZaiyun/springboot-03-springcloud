@@ -1,0 +1,19 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: cloud-provider-payment
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@127.0.0.1:1521:ORCL
+    username: MYJAVA
+    password: 1234
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.anzaiyun.entity
