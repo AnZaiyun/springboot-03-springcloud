@@ -16,6 +16,7 @@
         <module name="cloud-provider-zk-payment8003" />
         <module name="cloud-provider-consul-payment8004" />
         <module name="cloud-consumer-zk-order81" />
+        <module name="cloud-consumer-consul-order84" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />

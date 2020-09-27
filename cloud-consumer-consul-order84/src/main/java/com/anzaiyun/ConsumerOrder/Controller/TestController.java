@@ -32,7 +32,7 @@ public class TestController {
 
         CommonResult commonResult = restTemplate.getForEntity(PAYMENT_URL+"/test/1", CommonResult.class).getBody();
 
-        return "消费端（zk）："+commonResult.toString();
+        return "消费端（consul）："+commonResult.toString();
     }
 
     @RequestMapping("/con/2")
