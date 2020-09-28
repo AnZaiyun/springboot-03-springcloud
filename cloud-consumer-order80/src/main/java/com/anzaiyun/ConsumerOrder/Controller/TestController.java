@@ -3,6 +3,7 @@ package com.anzaiyun.ConsumerOrder.Controller;
 import com.anzaiyun.ConsumerOrder.Balance.LoadBalancer;
 import com.anzaiyun.entity.CommonResult;
 import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
