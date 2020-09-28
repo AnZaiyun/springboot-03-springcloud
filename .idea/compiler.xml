@@ -11,6 +11,7 @@
         <module name="cloud-eureka-server7001" />
         <module name="cloud-provider-payment8002" />
         <module name="cloud-provider-payment8001" />
+        <module name="cloud-consumer-feign-order86" />
         <module name="cloud-consumer-order80" />
         <module name="cloud_eureka_server_7002" />
         <module name="cloud-provider-zk-payment8003" />

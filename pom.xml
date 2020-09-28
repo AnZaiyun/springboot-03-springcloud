@@ -20,6 +20,7 @@
     <module>cloud-consumer-order80</module>
     <module>cloud-consumer-zk-order81</module>
     <module>cloud-consumer-consul-order84</module>
+    <module>cloud-consumer-feign-order86</module>
   </modules>
 
   <!--统一管理jar包版本-->
