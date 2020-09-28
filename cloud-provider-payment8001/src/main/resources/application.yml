@@ -22,5 +22,5 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
-    instance-id: cloud-provider-payment-8001
+    instance-id: cloud-provider-payment
     prefer-ip-address: true    #访问路径可以显示IP地址
