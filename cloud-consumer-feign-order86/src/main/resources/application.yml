@@ -11,3 +11,9 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+#开启openfeign的日志功能，设置日志级别
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    com.anzaiyun.ConsumerOrder.FeginService.PaymentFeginService: debug

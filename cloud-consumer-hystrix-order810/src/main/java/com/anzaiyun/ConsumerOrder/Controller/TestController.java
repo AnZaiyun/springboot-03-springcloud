@@ -1,13 +1,13 @@
 package com.anzaiyun.ConsumerOrder.Controller;
 
 import com.anzaiyun.ConsumerOrder.Balance.LoadBalancer;
-import com.anzaiyun.ConsumerOrder.FeginService.PaymentFeginService;
 import com.anzaiyun.entity.CommonResult;
 import org.apache.log4j.Logger;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 import java.net.URI;
@@ -21,9 +21,9 @@ public class TestController {
 
 //    public static final String PAYMENT_URL = "http://localhost:8001";
 //    改为微服务名称
-//    public static final String PAYMENT_URL = "http://cloud-provider-payment";
+    public static final String PAYMENT_URL = "http://cloud-provider-hystrix-payment";
     @Resource
-    private PaymentFeginService paymentFeginService;
+    private RestTemplate restTemplate;
 
     //自定义的负载均衡
     @Resource
@@ -33,18 +33,21 @@ public class TestController {
     @Resource
     private DiscoveryClient discoveryClient;
 
-    //测试自定义均衡负载
     @RequestMapping("/con/1")
     public String TestGetPayments(){
-        return "消费端(feign)："+paymentFeginService.TestGetPayments().toString();
-//        List<ServiceInstance> instances = discoveryClient.getInstances("cloud-provider-payment");
-//        if(instances == null || instances.size()<=0){
-//            return null;
-//        }
-//
-//        ServiceInstance serviceInstance = loadBalancer.instances(instances);
-//        URI uri = serviceInstance.getUri();
-//        logger.info("uri is: "+uri);
-//        return "消费端（eureka-自定义负载均衡）："+restTemplate.getForObject(uri.toString()+"/test/1",CommonResult.class);
+
+        CommonResult commonResult = restTemplate.getForEntity(PAYMENT_URL+"/test/1", CommonResult.class).getBody();
+
+        return "消费端（hystrix）："+commonResult.toString();
     }
+
+    @RequestMapping("/con/2")
+    public String TestGetPayments2(){
+
+        String result = restTemplate.getForEntity(PAYMENT_URL+"/test/2", String.class).getBody();
+
+        return "消费端（hystrix）："+result;
+    }
+
+
 }

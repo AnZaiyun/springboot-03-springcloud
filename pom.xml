@@ -21,6 +21,8 @@
     <module>cloud-consumer-zk-order81</module>
     <module>cloud-consumer-consul-order84</module>
     <module>cloud-consumer-feign-order86</module>
+      <module>cloud-provider-hystrix-payment8010</module>
+      <module>cloud-consumer-hystrix-order810</module>
   </modules>
 
   <!--统一管理jar包版本-->
