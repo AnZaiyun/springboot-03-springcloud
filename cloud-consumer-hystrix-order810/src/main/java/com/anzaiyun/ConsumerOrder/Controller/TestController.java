@@ -1,6 +1,7 @@
 package com.anzaiyun.ConsumerOrder.Controller;
 
 import com.anzaiyun.ConsumerOrder.Balance.LoadBalancer;
+import com.anzaiyun.ConsumerOrder.FeginService.PaymentFeginService;
 import com.anzaiyun.entity.CommonResult;
 import org.apache.log4j.Logger;
 import org.springframework.cloud.client.ServiceInstance;
@@ -21,13 +22,13 @@ public class TestController {
 
 //    public static final String PAYMENT_URL = "http://localhost:8001";
 //    改为微服务名称
-    public static final String PAYMENT_URL = "http://cloud-provider-hystrix-payment";
+//    public static final String PAYMENT_URL = "http://cloud-provider-hystrix-payment";
     @Resource
-    private RestTemplate restTemplate;
+    private PaymentFeginService paymentFeginService;
 
     //自定义的负载均衡
-    @Resource
-    private LoadBalancer loadBalancer;
+//    @Resource
+//    private LoadBalancer loadBalancer;
 
     //对于注册进eureka的微服务，可以通过服务发现的方式来获取服务信息
     @Resource
@@ -36,17 +37,13 @@ public class TestController {
     @RequestMapping("/con/1")
     public String TestGetPayments(){
 
-        CommonResult commonResult = restTemplate.getForEntity(PAYMENT_URL+"/test/1", CommonResult.class).getBody();
-
-        return "消费端（hystrix）："+commonResult.toString();
+        return "消费端（hystrix）："+paymentFeginService.TestGetPayments().toString();
     }
 
     @RequestMapping("/con/2")
     public String TestGetPayments2(){
 
-        String result = restTemplate.getForEntity(PAYMENT_URL+"/test/2", String.class).getBody();
-
-        return "消费端（hystrix）："+result;
+        return "消费端（hystrix）："+paymentFeginService.TestGetPayments2();
     }
 
 

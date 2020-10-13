@@ -21,7 +21,16 @@ public class TestController {
         Payment payment = paymentService.FindPaymentBylid(1);
 
         //使用RestTemplate远程调用该服务时，此处返回的类型与远程调用获得的类型一致
-        return new CommonResult(200,"8010(提供端：HYSTRIX):success",payment);
+        return new CommonResult(200,"8010(提供端：HYSTRIX):success-1",payment);
+    }
+
+    @RequestMapping("/11")
+    public CommonResult TestGetPayments11(){
+
+        Payment payment = paymentService.FindPaymentBylid(1);
+
+        //使用RestTemplate远程调用该服务时，此处返回的类型与远程调用获得的类型一致
+        return new CommonResult(200,"8010(提供端：HYSTRIX):success-11",payment);
     }
 
     @RequestMapping("/2")
