@@ -12,8 +12,8 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
 
-#ribbon:
-#  # 请求连接的超时时间 默认1秒
-#  ConnectTimeout: 5000
-#  # 请求处理的超时时间
-#  ReadTimeout: 5000
+ribbon:
+  # 请求连接的超时时间 默认1秒，服务端目前延时3秒，如果不配置这一项，访问con/1时会超时报错
+  ConnectTimeout: 5000
+  # 请求处理的超时时间
+  ReadTimeout: 5000
