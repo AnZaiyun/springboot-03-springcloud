@@ -81,6 +81,11 @@
         <!--            <groupId>org.apache.logging.log4j</groupId>-->
         <!--            <artifactId>log4j-api</artifactId>-->
         <!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+        </dependency>
     </dependencies>
 
 
