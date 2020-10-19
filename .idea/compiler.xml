@@ -19,6 +19,7 @@
         <module name="cloud-provider-zk-payment8003" />
         <module name="cloud-consumer-HystrixDsb-order811" />
         <module name="cloud-consumer-feign-order86" />
+        <module name="cloud-gateway-820" />
         <module name="cloud_eureka_server_7002" />
         <module name="cloud-consumer-zk-order81" />
       </profile>

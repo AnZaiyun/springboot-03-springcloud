@@ -1,0 +1,30 @@
+server:
+  port: 820
+
+spring:
+  application:
+    name: cloud-gateway
+  cloud:
+    gateway:
+      routes:
+        #- 值表示数组中的一个元素
+        - id: payment_routh
+          uri: http://localhost:8001
+          predicates:
+            - Path=/test/1
+
+        - id: payment_routh2
+          uri: http://localhost:8001
+          predicates:
+            - Path=/test/2
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service  #eureka服务的实例名
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      #设置与eureka server交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://eureka7001.com:7001/eureka/
+

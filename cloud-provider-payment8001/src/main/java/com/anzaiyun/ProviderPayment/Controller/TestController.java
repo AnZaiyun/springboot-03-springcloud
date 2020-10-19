@@ -27,4 +27,9 @@ public class TestController {
         //使用RestTemplate远程调用该服务时，此处返回的类型与远程调用获得的类型一致
         return new CommonResult(200,"8001:success",payment);
     }
+
+    @RequestMapping("/2")
+    public String TestGetPayments2(){
+        return "8001:success:第二个测试服务";
+    }
 }
