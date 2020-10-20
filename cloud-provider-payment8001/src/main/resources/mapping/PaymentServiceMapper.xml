@@ -10,4 +10,15 @@
         select t.l_payid l_id,t.vc_serial from tpayment t where t.l_payid = #{l_id}
     </select>
 
+    <update id="AddPayment" parameterType="com.anzaiyun.entity.Payment">
+        declare
+          v_l_id number(10);
+        begin
+          select nvl(max(t.l_payid),0)+1 into v_l_id from tpayment t;
+
+          insert into tpayment(L_PAYID,VC_SERIAL)
+          values(v_l_id,#{vc_serial});
+        end;
+    </update>
+
 </mapper>

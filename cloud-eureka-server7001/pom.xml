@@ -12,16 +12,6 @@
     <artifactId>cloud-eureka-server7001</artifactId>
 
     <dependencies>
-        <!-- 新版本 -->
-        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-eureka-server -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-netflix-eureka-server</artifactId>-->
-<!--        </dependency>-->
         <!-- 新版本的eureka对熔断器有要求 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

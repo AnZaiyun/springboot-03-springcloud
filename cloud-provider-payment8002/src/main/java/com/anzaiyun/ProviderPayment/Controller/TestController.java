@@ -5,6 +5,7 @@ import com.anzaiyun.entity.Payment;
 import com.anzaiyun.service.payment.PaymentService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -28,6 +29,11 @@ public class TestController {
         return new CommonResult(200,"8002:success",payment);
     }
 
+    @RequestMapping("/2")
+    public String TestGetPayments2(){
+        return "8001:success:第二个测试服务";
+    }
+
     /**
      * @author anzaiyun
      * 对于结果不封装CommonResult
@@ -37,5 +43,15 @@ public class TestController {
         Payment payment = paymentService.FindPaymentBylid(3);
         payment.setVc_serial(payment.getVc_serial()+":"+httpPort);
         return payment;
+    }
+
+    @RequestMapping("/add")
+    public CommonResult testAddPayment(@RequestParam("vc_serial") String vc_serial){
+
+        Payment payment = new Payment();
+        payment.setVc_serial(vc_serial);
+        boolean resilt = paymentService.AddPayment(payment);
+        //使用RestTemplate远程调用该服务时，此处返回的类型与远程调用获得的类型一致
+        return new CommonResult(200,"8002:success",payment);
     }
 }

@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -90,5 +91,21 @@ public class TestController {
         URI uri = serviceInstance.getUri();
         logger.info("uri is: "+uri);
         return "消费端（eureka-自定义负载均衡）："+restTemplate.getForObject(uri.toString()+"/test/1",CommonResult.class);
+    }
+
+    @RequestMapping("/con/add")
+    public String testAddPayment(@RequestParam("vc_serial") String vc_serial){
+
+        //使用RestTemplate远程调用该服务时，此处返回的类型与远程调用获得的类型一致
+        List<ServiceInstance> instances = discoveryClient.getInstances("cloud-provider-payment");
+        if(instances == null || instances.size()<=0){
+            return null;
+        }
+
+        ServiceInstance serviceInstance = loadBalancer.instances(instances);
+        URI uri = serviceInstance.getUri();
+        logger.info("uri is: "+uri);
+        return "消费端（eureka-插入数据）："+restTemplate.getForObject(uri.toString()+"/test/add"+"?vc_serial="+vc_serial,CommonResult.class);
+
     }
 }

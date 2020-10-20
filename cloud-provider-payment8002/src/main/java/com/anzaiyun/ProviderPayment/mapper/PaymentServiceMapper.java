@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PaymentServiceMapper {
 
-    public boolean AddPayment(Payment payment);
+    public Integer AddPayment(Payment payment);
 
     public boolean AddPayments(Payment[] payments);
 

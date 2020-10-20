@@ -14,7 +14,9 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public boolean AddPayment(Payment payment) {
-        return false;
+        Integer result = paymentServiceMapper.AddPayment(payment);
+        System.out.println(result);
+        return true;
     }
 
     @Override
