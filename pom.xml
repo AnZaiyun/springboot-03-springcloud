@@ -15,6 +15,7 @@
     <module>cloud_eureka_server_7002</module>
     <module>cloud-provider-payment8001</module>
     <module>cloud-provider-payment8002</module>
+    <module>cloud-provider-payment8005</module>
     <module>cloud-provider-zk-payment8003</module>
     <module>cloud-provider-consul-payment8004</module>
     <module>cloud-consumer-order80</module>
@@ -25,7 +26,8 @@
     <module>cloud-consumer-hystrix-order810</module>
     <module>cloud-consumer-HystrixDsb-order811</module>
     <module>cloud-gateway-820</module>
-      <module>cloud-provider-payment8005</module>
+    <module>cloud-config-3344</module>
+    <module>cloud-config-client-3355</module>
   </modules>
 
   <!--统一管理jar包版本-->
