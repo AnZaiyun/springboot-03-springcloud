@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Component
-@FeignClient(value = "cloud-provider-hystrix-payment" ,fallback = PaymentFeginServiceFallback.class)
+@FeignClient(value = "cloud-provider-hystrix-payment" ,fallback = PaymentFeginServiceFallbackImpl.class)
 public interface PaymentFeginService {
 
     //RequestMapping的地址应该是服务端的完整地址，包含类上和方法上的

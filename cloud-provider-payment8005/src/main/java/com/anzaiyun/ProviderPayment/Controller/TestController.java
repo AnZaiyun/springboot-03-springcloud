@@ -25,7 +25,7 @@ public class TestController {
         Payment payment = paymentService.FindPaymentBylid(1);
 
         //使用RestTemplate远程调用该服务时，此处返回的类型与远程调用获得的类型一致
-        return new CommonResult(200,"8002:success",payment);
+        return new CommonResult(200,"8005:success",payment);
     }
 
     /**

@@ -10,6 +10,7 @@ public class RibbonConfByRandom {
 
     @Bean
     public IRule myRule(){
-        return new RandomRule();  //随机访问
+        //随机访问
+        return new RandomRule();
     }
 }

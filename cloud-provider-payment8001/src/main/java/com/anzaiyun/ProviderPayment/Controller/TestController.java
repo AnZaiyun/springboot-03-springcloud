@@ -5,6 +5,7 @@ import com.anzaiyun.entity.CommonResult;
 import com.anzaiyun.entity.Payment;
 import com.anzaiyun.service.payment.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,6 +20,9 @@ public class TestController {
     @Resource
     PaymentService paymentService ;
 
+    @Value("${server.port}")
+    String httpPort;
+
     @RequestMapping("/1")
     public CommonResult TestGetPayments(){
 
@@ -31,5 +35,16 @@ public class TestController {
     @RequestMapping("/2")
     public String TestGetPayments2(){
         return "8001:success:第二个测试服务";
+    }
+
+    /**
+     * @author anzaiyun
+     * 对于结果不封装CommonResult
+     */
+    @RequestMapping("/3")
+    public Payment TestGetPayments3(){
+        Payment payment = paymentService.FindPaymentBylid(3);
+        payment.setVc_serial(payment.getVc_serial()+":"+httpPort);
+        return payment;
     }
 }

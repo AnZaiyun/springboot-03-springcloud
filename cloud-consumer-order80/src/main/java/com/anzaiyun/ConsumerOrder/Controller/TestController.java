@@ -2,6 +2,7 @@ package com.anzaiyun.ConsumerOrder.Controller;
 
 import com.anzaiyun.ConsumerOrder.Balance.LoadBalancer;
 import com.anzaiyun.entity.CommonResult;
+import com.anzaiyun.entity.Payment;
 import org.apache.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 import org.springframework.cloud.client.ServiceInstance;
@@ -42,6 +43,20 @@ public class TestController {
         return "消费端（eureka）："+commonResult.toString();
     }
 
+    @RequestMapping("/con/pay")
+    public Payment testGetPayments(){
+
+        Payment payment = restTemplate.getForEntity(PAYMENT_URL+"/test/3", Payment.class).getBody();
+
+//        return "消费端（eureka）："+payment.toString();
+        payment.setVc_serial("消费端（eureka）:"+payment.getVc_serial());
+        return payment;
+    }
+
+    /**
+     * 使用服务发现获取所有服务实例
+     * @return
+     */
     @RequestMapping("/con/2")
     public String TestGetPayments2(){
         List<String> services = discoveryClient.getServices();
@@ -54,11 +69,15 @@ public class TestController {
             logger.info("ServiceId:"+instance.getServiceId()+"  Host:"+instance.getHost()+
                     "  Port:"+instance.getPort()+"  Uri:"+instance.getUri());
         }
-        return "null";
+        return "消费端（eureka-discoveryClient）："+
+                restTemplate.getForObject(instances.get(0).getUri().toString()+"/test/1",CommonResult.class).toString();
 
     }
 
-    //测试自定义均衡负载
+    /**
+     * @author anzaiyun
+     * 测试自定义负载均衡
+     */
     @RequestMapping("/con/3")
     public String TestGetPayments3(){
 

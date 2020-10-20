@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
+/**
+ * @author anzaiyun
+ * @date 2020/10/20
+ */
 @RestController
 @RequestMapping("/test")
 public class TestController {

@@ -25,6 +25,7 @@
     <module>cloud-consumer-hystrix-order810</module>
     <module>cloud-consumer-HystrixDsb-order811</module>
     <module>cloud-gateway-820</module>
+      <module>cloud-provider-payment8005</module>
   </modules>
 
   <!--统一管理jar包版本-->

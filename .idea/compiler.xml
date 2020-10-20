@@ -13,6 +13,7 @@
         <module name="cloud-api-commons" />
         <module name="cloud-provider-hystrix-payment8010" />
         <module name="cloud-provider-payment8002" />
+        <module name="cloud-provider-payment8005" />
         <module name="cloud-consumer-hystrix-order810" />
         <module name="cloud-provider-payment8001" />
         <module name="cloud-provider-consul-payment8004" />

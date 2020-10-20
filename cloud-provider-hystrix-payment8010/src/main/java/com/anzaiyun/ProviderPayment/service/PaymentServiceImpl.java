@@ -46,11 +46,13 @@ public class PaymentServiceImpl implements PaymentService {
 
     //FindPaymentBylid服务降级时调用的方法
     public Payment FindPaymentBylid_Timeout(Integer l_id) {
-//        logger.debug("触发降级。。。");
         System.out.println("触发降级。。。");
         return paymentServiceMapper.FindPaymentBylid(2);
     }
-
+    /**
+     * @author anzaiyun
+     * @date 2020/10/20
+     */
     @Override
     public Payment[] FindPayments() {
         return paymentServiceMapper.FindPayments();
