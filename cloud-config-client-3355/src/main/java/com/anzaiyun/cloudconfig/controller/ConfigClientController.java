@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RefreshScope
 public class ConfigClientController {
 
+    // 当配置中心和本地配置同时存在时，配置中心的配置会覆盖本地的，以配置中心的为准
     @Value("${spring.application.name}")
     private String name;
 

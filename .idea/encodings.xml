@@ -38,6 +38,10 @@
     <file url="file://$PROJECT_DIR$/cloud-provider-payment8005/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-provider-zk-payment8003/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-provider-zk-payment8003/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-rabbitmq-consumer-4101/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-rabbitmq-consumer-4101/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-rabbitmq-producer-4001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-rabbitmq-producer-4001/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eureka_server_7002/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud_eureka_server_7002/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />

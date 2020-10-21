@@ -1,0 +1,16 @@
+server:
+  port: 4101
+
+spring:
+  application:
+    name: cloud-rabbitmq-consumer
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
