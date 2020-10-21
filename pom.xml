@@ -28,6 +28,7 @@
     <module>cloud-gateway-820</module>
     <module>cloud-config-3344</module>
     <module>cloud-config-client-3355</module>
+    <module>cloud-config-client-3356</module>
   </modules>
 
   <!--统一管理jar包版本-->
@@ -78,13 +79,14 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <!--mysql-->
-<!--      <dependency>-->
-<!--        <groupId>mysql</groupId>-->
-<!--        <artifactId>mysql-connector-java</artifactId>-->
-<!--        <version>${mysql.version}</version>-->
-<!--        <scope>runtime</scope>-->
-<!--      </dependency>-->
+
+<!--      mysql-->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.version}</version>
+        <scope>runtime</scope>
+      </dependency>
       <dependency>
         <groupId>com.oracle.database.jdbc</groupId>
         <artifactId>ojdbc8</artifactId>
@@ -137,17 +139,17 @@
   </dependencyManagement>
 
   <!-- 增加热部署插件 -->
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <fork>true</fork>
-          <addResources>true</addResources>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+<!--  <build>-->
+<!--    <plugins>-->
+<!--      <plugin>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--          <fork>true</fork>-->
+<!--          <addResources>true</addResources>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
+<!--    </plugins>-->
+<!--  </build>-->
 
 </project>
