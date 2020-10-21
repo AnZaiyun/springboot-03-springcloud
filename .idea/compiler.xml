@@ -11,6 +11,7 @@
         <module name="cloud-config-client-3356" />
         <module name="cloud-rabbitmq-producer-4001" />
         <module name="cloud-config-3344" />
+        <module name="cloud-stream-rabbitmq-consumer8803" />
         <module name="cloud-eureka-server7001" />
         <module name="cloud-provider-payment8002" />
         <module name="cloud-api-commons" />
@@ -22,12 +23,14 @@
         <module name="cloud-provider-consul-payment8004" />
         <module name="cloud-provider-zk-payment8003" />
         <module name="cloud-consumer-HystrixDsb-order811" />
+        <module name="cloud-stream-rabbitmq-provider8801" />
         <module name="cloud-consumer-feign-order86" />
         <module name="cloud-gateway-820" />
         <module name="cloud-config-client-3355" />
         <module name="cloud-consumer-consul-order84" />
         <module name="cloud_eureka_server_7002" />
         <module name="cloud-consumer-zk-order81" />
+        <module name="cloud-stream-rabbitmq-consumer8802" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
