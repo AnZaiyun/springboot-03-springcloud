@@ -10,6 +10,12 @@ spring:
       name: config
       profile: dev
       uri: http://localhost:3344
+  #15672是web管理界面的端口，5672是mq访问的端口
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:

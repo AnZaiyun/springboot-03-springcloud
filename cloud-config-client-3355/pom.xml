@@ -27,6 +27,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- 添加消息总线rabbitmq的支持 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+
         <!-- github配置文件修改后，客户端可以动态刷新 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
