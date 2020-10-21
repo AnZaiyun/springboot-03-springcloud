@@ -21,6 +21,7 @@ spring:
           destination: studyExchange  # 表示要使用的Exchange的名称定义
           content-type: application/json # 设置消息类型，本次为json，文本设置为“text/plain”
           binder: defaultRabbit  # 设置要绑定的消息服务的具体设置
+          group: An  # 同一组的消费者为竞争关系，一个生产者的消息只会被一个消费者使用
 
 eureka:
   client:

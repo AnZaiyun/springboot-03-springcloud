@@ -21,6 +21,9 @@ spring:
           destination: studyExchange  # 表示要使用的Exchange的名称定义
           content-type: application/json # 设置消息类型，本次为json，文本设置为“text/plain”
           binder: defaultRabbit  # 设置要绑定的消息服务的具体设置
+          # 同一组的消费者为竞争关系，一个生产者的消息只会被一个消费者使用
+          # 没有配置分组时,会出现消息漏消费的问题，配置分组后,可以自动获取未消费的数据
+          group: An
 
 eureka:
   client:
@@ -29,7 +32,7 @@ eureka:
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
-    instance-id: cloud-stream-consumer-8802
+    instance-id: cloud-stream-consumer-8803
     prefer-ip-address: true    #访问路径可以显示IP地址
     #eureka客户端向服务端发送心跳的时间间隔，单位为秒（默认30秒）
     lease-renewal-interval-in-seconds: 1
