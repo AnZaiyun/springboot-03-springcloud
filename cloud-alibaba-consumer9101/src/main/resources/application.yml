@@ -1,0 +1,20 @@
+server:
+  port: 9101
+
+spring:
+  application:
+    name: cloud-alibaba-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#消费者远程访问的生产者微服务地址
+service-url:
+  nacos-user-service: http://cloud-alibaba-provider

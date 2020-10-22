@@ -34,6 +34,10 @@
     <module>cloud-stream-rabbitmq-provider8801</module>
     <module>cloud-stream-rabbitmq-consumer8802</module>
     <module>cloud-stream-rabbitmq-consumer8803</module>
+    <module>cloud-alibaba-consumer9101</module>
+    <module>cloud-alibaba-provider9001</module>
+    <module>cloud-alibaba-provider9002</module>
+    <module>cloud-alibaba-provider9003</module>
   </modules>
 
   <!--统一管理jar包版本-->
@@ -50,6 +54,7 @@
     <orai18n.version>12.1.0.2.0</orai18n.version>
     <druid.version>1.1.16</druid.version>
     <mybatis.spring.boot.version>2.1.1</mybatis.spring.boot.version>
+<!--    <alibaba.version>2.1.0</alibaba.version>-->
   </properties>
 
   <dependencyManagement>
@@ -140,6 +145,15 @@
         <artifactId>orai18n</artifactId>
         <version>${orai18n.version}</version>
       </dependency>
+
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>2.1.0.RELEASE</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
