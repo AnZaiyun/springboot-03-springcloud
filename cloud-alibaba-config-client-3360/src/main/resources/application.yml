@@ -1,0 +1,4 @@
+spring:
+  profiles:
+#    active: dev  # 表示去配置中心拉取 xxx-dev.yml的配置文件
+    active: info

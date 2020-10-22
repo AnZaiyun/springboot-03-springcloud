@@ -28,6 +28,7 @@
         <module name="cloud-alibaba-provider9003" />
         <module name="cloud-alibaba-consumer9101" />
         <module name="cloud-alibaba-provider9001" />
+        <module name="cloud-alibaba-config-client-3360" />
         <module name="cloud-consumer-feign-order86" />
         <module name="cloud-config-client-3356" />
         <module name="cloud-rabbitmq-consumer-4101" />

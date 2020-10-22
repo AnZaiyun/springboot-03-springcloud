@@ -38,6 +38,7 @@
     <module>cloud-alibaba-provider9001</module>
     <module>cloud-alibaba-provider9002</module>
     <module>cloud-alibaba-provider9003</module>
+    <module>cloud-alibaba-config-client-3360</module>
   </modules>
 
   <!--统一管理jar包版本-->
