@@ -9,8 +9,19 @@ spring:
     port: 5672
     username: guest
     password: guest
+  #  nacos注册中心
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
