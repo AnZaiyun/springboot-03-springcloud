@@ -1,8 +1,7 @@
 package com.anzaiyun.cloudrabbitmq.service;
 
 import com.anzaiyun.cloudrabbitmq.config.RabbitmqConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,7 @@ import java.util.UUID;
 @Component
 public class MsgProducer implements RabbitTemplate.ConfirmCallback {
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = Logger.getLogger(this.getClass());
 
     //由于rabbitTemplate的scope属性设置为ConfigurableBeanFactory.SCOPE_PROTOTYPE，所以不能自动注入
     private RabbitTemplate rabbitTemplate;
@@ -43,11 +42,11 @@ public class MsgProducer implements RabbitTemplate.ConfirmCallback {
      */
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-        logger.info(" 回调id:" + correlationData);
+        logger.debug(" 回调id:" + correlationData);
         if (ack) {
-            logger.info("消息成功消费");
+            logger.debug("消息成功消费");
         } else {
-            logger.info("消息消费失败:" + cause);
+            logger.debug("消息消费失败:" + cause);
         }
     }
 

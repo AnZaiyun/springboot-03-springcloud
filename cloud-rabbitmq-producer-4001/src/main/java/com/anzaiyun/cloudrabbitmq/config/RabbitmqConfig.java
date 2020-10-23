@@ -1,8 +1,7 @@
 package com.anzaiyun.cloudrabbitmq.config;
 
 import com.rabbitmq.client.Channel;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -29,7 +28,7 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class RabbitmqConfig {
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private final Logger logger = Logger.getLogger(this.getClass());
 
     @Value("${spring.rabbitmq.host}")
     private String host;
@@ -162,7 +161,7 @@ public class RabbitmqConfig {
                  换句话说,在接收到该Consumer的ack前,它不会将新的Message分发给它 */
                 channel.basicQos(1);
                 byte[] body = message.getBody();
-                logger.info("接收处理队列A当中的消息:" + new String(body));
+                logger.debug("接收处理队列A当中的消息:" + new String(body));
                 /**为了保证永远不会丢失消息，RabbitMQ支持消息应答机制。
                  当消费者接收到消息并完成任务后会往RabbitMQ服务器发送一条确认的命令，然后RabbitMQ才会将消息删除。*/
                 channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
