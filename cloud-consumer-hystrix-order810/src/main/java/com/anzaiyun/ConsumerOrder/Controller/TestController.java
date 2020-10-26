@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 @DefaultProperties(defaultFallback = "TestGetPayments_global_timeout")
 public class TestController {
 
-    private Logger logger = Logger.getLogger(TestController.class);
+    private final Logger logger = Logger.getLogger(this.getClass());
 
     @Resource
     private PaymentFeginService paymentFeginService;
@@ -26,7 +26,7 @@ public class TestController {
 
     @RequestMapping("/con/1")
     @HystrixCommand(fallbackMethod = "TestGetPayments_timeout",threadPoolKey = "threadPoolKey_test_1",commandProperties = {
-            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "3000")
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "5000")
             //这里表示调用此方法的线程，最多只等待3秒，超过3秒无响应，触发降级，调用指定方法
     })
     public String TestGetPayments(){
@@ -35,7 +35,7 @@ public class TestController {
     }
 
     public String TestGetPayments_timeout(){
-
+        logger.debug("TestGetPayments-->>TestGetPayments_timeout");
         return "消费端（hystrix-消费端降级-专用）";
     }
 

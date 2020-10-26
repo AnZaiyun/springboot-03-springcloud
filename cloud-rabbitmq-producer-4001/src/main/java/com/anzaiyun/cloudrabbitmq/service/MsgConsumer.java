@@ -2,6 +2,7 @@ package com.anzaiyun.cloudrabbitmq.service;
 
 import com.anzaiyun.cloudrabbitmq.config.RabbitmqConfig;
 import org.apache.log4j.Logger;
+import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
@@ -36,5 +37,12 @@ public class MsgConsumer {
     public void processB3(String content) {
         logger.debug("处理器B3，接收处理队列B当中的消息： " + content);
     }
+
+    //接收python生产消息
+//    @RabbitHandler
+//    @RabbitListener(queues = RabbitmqConfig.QUEUE_PYTHON)
+//    public void processPython(String content) {
+//        logger.debug("处理器Python，接收处理队列python-test当中的消息： " + content);
+//    }
 
 }

@@ -35,7 +35,7 @@ public class PaymentServiceImpl implements PaymentService {
             //这里表示调用此方法的线程，最多只等待3秒，超过3秒无响应，触发降级，调用指定方法
     })
     public Payment FindPaymentBylid(Integer l_id) {
-        int timeNumber = 5;
+        int timeNumber = 1;
         try{
             TimeUnit.SECONDS.sleep(timeNumber);
         }catch (InterruptedException e){

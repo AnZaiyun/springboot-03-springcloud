@@ -50,8 +50,16 @@ public class TestController {
     @RequestMapping("/msg/fanout")
     @ResponseBody
     public String fanoutExchange() {
-        msgProducer.sendAll("发送广播消息");
+        msgProducer.sendAll("http://localhost:4001/test/msg/a");
 
-        return "msgProducer.sendMsgB()："+ UUID.randomUUID().toString();
+        return "发送广播接口信息给python队列：http://localhost:4001/test/msg/a  回调id："+ UUID.randomUUID().toString();
+    }
+
+    @RequestMapping("/msg/python")
+    @ResponseBody
+    public String sendToPython(){
+        msgProducer.sendMsgPython("http://localhost:4001/test/msg/a");
+
+        return "发送接口信息给python队列：http://localhost:4001/test/msg/a  回调id："+ UUID.randomUUID().toString();
     }
 }
